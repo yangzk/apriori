@@ -429,6 +429,7 @@ class AprioriCalculation
         
         int currentDepth = 0;
         int currentIndex = 0;
+        int numNode = 0;
         for(int ii=0; ii < tempCandidates.size(); ii++){
         	String candName = tempCandidates.get(ii);
         	String[] candSplit = candName.split(" ");
@@ -454,11 +455,17 @@ class AprioriCalculation
     	    nodes.add(node);
     	    
     	    currentIndex++;
+    	 
+    	    
         }
         
-        json.put("numNode", nodes.size());
+        json.put("numNodes", nodes.size());
         
         json.put("minSup", minSup);
+        
+        json.put("numItems", numItems);
+        
+        
         
         
         
@@ -525,9 +532,10 @@ class AprioriCalculation
 					if(itemSize >1 ){
 						
 						
-						itemParents.add( itemSubset.get(itemSize - 1));
-						itemParents.add( itemSubset.get(itemSize - 2));
-						
+						//itemParents.add( itemSubset.get(itemSize - 1));
+						//itemParents.add( itemSubset.get(itemSize - 2));
+						Collections.reverse(itemSubset);
+						itemParents = itemSubset;
 						
 						
 						

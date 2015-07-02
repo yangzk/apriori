@@ -50,9 +50,9 @@ class AprioriCalculation
     Vector<String> prevCandidates=new Vector<String>();
     Vector<String> leftCandidates=new Vector<String>();
     
-    String configFile="config.txt"; //configuration file
-    String transaFile="transa.txt"; //transaction file
-    String outputFile="apriori-output.txt";//output file
+    String configFile="data/config.txt"; //configuration file
+    String transaFile="data/transa.txt"; //transaction file
+    String outputFile="data/apriori-output.txt";//output file
     int numItems; //number of items per transaction
     int numTransactions; //number of transactions
     double minSup; //minimum support for a frequent itemset
@@ -144,7 +144,7 @@ class AprioriCalculation
         
         try {
         	 
-    		FileWriter file = new FileWriter("test.json");
+    		FileWriter file = new FileWriter("data/test.json");
     		file.write(json.toJSONString());
     		file.flush();
     		file.close();
